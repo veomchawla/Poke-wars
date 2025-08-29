@@ -1,0 +1,19 @@
+### Get Pokémon Info
+GET http://localhost:8000/pokemon/pikachu
+Accept: application/json
+
+### Simulate Battle with Status Effects
+POST http://localhost:8000/battle/simulate?pokemon1=pikachu&pokemon2=squirtle&status1=paralysis&status2=poison
+Accept: application/json
+
+### Get Battle Strategy
+GET http://localhost:8000/battle/strategy/pikachu
+Accept: application/json
+
+### Get Battle Status
+GET http://localhost:8000/battle/status/pikachu
+Accept: application/json
+
+### Get Available Moves
+GET http://localhost:8000/battle/moves/pikachu
+Accept: application/json
